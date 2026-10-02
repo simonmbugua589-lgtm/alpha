@@ -1,0 +1,29 @@
+{
+  "name": "gold-mine",
+  "version": "2.0.0",
+  "description": "Gold Mine — premium investment platform (Next.js + Express + Prisma)",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && npm install --prefix backend && npm install --prefix frontend",
+    "db:generate": "npm run db:generate --prefix backend",
+    "db:push": "npm run db:push --prefix backend",
+    "db:seed": "npm run db:seed --prefix backend",
+    "dev:api": "npm run dev --prefix backend",
+    "dev:web": "npm run dev --prefix frontend",
+    "dev": "npm run db:generate && npm run db:push && npm run db:seed && concurrently \"npm run dev:api\" \"npm run dev:web\"",
+    "build": "npm run build --prefix backend && npm run build --prefix frontend",
+    "start:legacy": "node server.js"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "prisma": "^6.3.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.3.0"
+  },
+  "allowScripts": {
+    "@prisma/client@6.19.3": true,
+    "@prisma/engines@6.19.3": true,
+    "prisma@6.19.3": true
+  }
+}

@@ -1,0 +1,5 @@
+node_modules/
+goldmine.db
+goldmine.db-wal
+goldmine.db-shm
+.env
